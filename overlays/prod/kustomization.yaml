@@ -22,7 +22,7 @@ patches:
                   limits:
                     memory: 128Mi
                   requests:
-                    memory: 64Mi
+                    memory: 128Mi
                     cpu: 100m
 configMapGenerator:
   - name: rollouts-demo-config
