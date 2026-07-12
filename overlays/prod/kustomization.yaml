@@ -3,6 +3,7 @@ kind: Kustomization
 resources:
   - ../../base
   - namespace.yaml
+  - pdb.yaml
 namespace: rollouts-demo-prod
 replicas:
   - name: rollouts-demo
