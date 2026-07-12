@@ -7,3 +7,7 @@ labels:
   - pairs:
       app.kubernetes.io/version: blue
     includeSelectors: false
+configMapGenerator:
+  - name: rollouts-demo-config
+    literals:
+      - LOG_LEVEL=info

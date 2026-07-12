@@ -4,3 +4,8 @@ resources:
   - ../../base
   - namespace.yaml
 namespace: rollouts-demo-dev
+configMapGenerator:
+  - name: rollouts-demo-config
+    behavior: merge
+    literals:
+      - ENV_NAME=dev

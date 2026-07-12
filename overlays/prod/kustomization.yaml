@@ -24,3 +24,8 @@ patches:
                   requests:
                     memory: 64Mi
                     cpu: 100m
+configMapGenerator:
+  - name: rollouts-demo-config
+    behavior: merge
+    literals:
+      - ENV_NAME=prod
