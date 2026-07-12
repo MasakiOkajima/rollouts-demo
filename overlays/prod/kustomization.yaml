@@ -7,3 +7,20 @@ namespace: rollouts-demo-prod
 replicas:
   - name: rollouts-demo
     count: 3
+patches:
+  - patch: |-
+      apiVersion: apps/v1
+      kind: Deployment
+      metadata:
+        name: rollouts-demo
+      spec:
+        template:
+          spec:
+            containers:
+              - name: rollouts-demo
+                resources:
+                  limits:
+                    memory: 128Mi
+                  requests:
+                    memory: 64Mi
+                    cpu: 100m
