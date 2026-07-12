@@ -23,6 +23,12 @@ spec:
         envFrom:
           - configMapRef:
               name: rollouts-demo-config
+        resources:
+          requests:
+            cpu: 50m
+            memory: 64Mi
+          limits:
+            memory: 64Mi
         readinessProbe:
           httpGet:
             path: /
