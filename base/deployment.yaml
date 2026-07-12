@@ -23,3 +23,15 @@ spec:
         envFrom:
           - configMapRef:
               name: rollouts-demo-config
+        readinessProbe:
+          httpGet:
+            path: /
+            port: http
+          periodSeconds: 5
+          failureThreshold: 3
+        livenessProbe:
+          httpGet:
+            path: /
+            port: http
+          periodSeconds: 10
+          failureThreshold: 3
