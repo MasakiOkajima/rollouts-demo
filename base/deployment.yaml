@@ -41,3 +41,9 @@ spec:
             port: http
           periodSeconds: 10
           failureThreshold: 3
+        startupProbe:
+          httpGet:
+            path: /
+            port: http
+          periodSeconds: 30
+          failureThreshold: 5
