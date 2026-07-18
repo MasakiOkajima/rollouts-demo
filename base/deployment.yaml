@@ -46,8 +46,8 @@ spec:
           httpGet:
             path: /
             port: http
-          periodSeconds: 30
-          failureThreshold: 5
+          periodSeconds: 5
+          failureThreshold: 30
         lifecycle:
           preStop:
             sleep:
