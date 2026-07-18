@@ -14,6 +14,7 @@ spec:
       labels:
         app.kubernetes.io/name: rollouts-demo
     spec:
+      terminationGracePeriodSeconds: 30
       containers:
       - image: argoproj/rollouts-demo:blue
         name: rollouts-demo
@@ -47,3 +48,7 @@ spec:
             port: http
           periodSeconds: 30
           failureThreshold: 5
+        lifecycle:
+          preStop:
+            sleep:
+              seconds: 10
