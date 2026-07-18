@@ -17,6 +17,15 @@ patches:
       spec:
         template:
           spec:
+            topologySpreadConstraints:
+              - maxSkew: 1
+                topologyKey: kubernetes.io/hostname
+                whenUnsatisfiable: DoNotSchedule
+                # AWSとかじゃそもそもコントロールプレーンのノードは対象ではない
+                nodeTaintsPolicy: Honor
+                labelSelector:
+                  matchLabels:
+                    app.kubernetes.io/name: rollouts-demo
             containers:
               - name: rollouts-demo
                 resources:
